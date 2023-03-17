@@ -1,2 +1,7 @@
-@import url("./_variable.scss");
-@import url("./_vendors.scss");
+@import "./variable";
+@import "./vendors";
+@import "./common";
+
+//Pages styling
+@import "./landing-page";
+@import "./dashboard";
