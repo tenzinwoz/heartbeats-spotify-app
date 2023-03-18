@@ -1,15 +1,46 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  // font-family: "Open Sans", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.h1-head {
-  font-size: large;
+// .h1-head {
+//   font-size: large;
+// }
+
+.col-2{
+  background-color: $black-light;
+  position: relative; 
+}
+
+.col-2 img {
+  transform: rotate(90deg);
+  margin: auto;
+  margin-top: 90px;
+  mix-blend-mode: lighten;
+  display: block;
+}
+
+.vl {
+  position: absolute;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #EFF1EB;
+}
+
+.text-white{
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 80px;
+  color: #EFF1EB;
 }
 
 .btn-green {
-  border-radius: 21px;
+  border-radius: 30px;
   border: none;
   background-color: $primary-color;
-  padding: 10px 30px;
-  color: white;
+  padding: 18px 37px;
+  color: #FBFAFA;
+  margin-top: 30px;
 }
