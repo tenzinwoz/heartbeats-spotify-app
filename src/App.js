@@ -13,6 +13,7 @@ import {
 } from "./helper/common";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Dashboard from "./container/dashboard/Dashboard";
+import About from "./container/about/About";
 
 function App() {
   const navigate = useNavigate();
@@ -45,13 +46,15 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route
-        path="/dashboard"
+        path="dashboard"
         element={
           <PrivateRoute>
             <Dashboard />
           </PrivateRoute>
         }
-      />
+      >
+        <Route path="about" element={<About />} />
+      </Route>
     </Routes>
   );
 }
