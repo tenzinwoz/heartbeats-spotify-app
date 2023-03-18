@@ -1,55 +1,12 @@
 .dashboard {
   display: flex;
   height: 100vh;
-  .sidebar {
-    width: 20%;
-    background-color: $black-color;
-    height: 100%;
-
-    .logo {
-      padding-top: 15px;
-      max-width: 50px;
-      margin: 0 auto;
-      img {
-        width: 100%;
-      }
-    }
-  }
   .main {
     flex-grow: 1;
     background-color: $black-light;
     overflow-y: auto;
-    padding: 10px;
-
-    .header {
-      position: sticky;
-      padding: 10px;
-      top: 0;
-      width: 100%;
-      height: 70px;
-      background-color: $black-light;
-      .items {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        height: 100%;
-
-        .search-bar {
-          background-color: transparent;
-          border: 0px;
-          border-bottom: 1px solid #fafafa;
-        }
-        .account-avatar {
-          margin-left: 15px;
-          width: 40px;
-          height: 40px;
-          background-color: $primary-color;
-        }
-      }
-    }
-
     .content {
-      padding: 10px;
+      padding: 15px;
     }
   }
 }

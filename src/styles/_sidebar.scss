@@ -1,0 +1,37 @@
+.sidebar {
+  width: 15%;
+  background-color: $black-color;
+  height: 100%;
+
+  .logo {
+    padding-top: 15px;
+    max-width: 50px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  .divider {
+    color: #fff;
+    width: 80%;
+    margin: 20px auto;
+  }
+  .menu {
+    ul {
+      padding: 0px;
+      .active {
+        border-left: 3px solid #fff;
+        background-color: $primary-color;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        color: white;
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.footer {
+  position: sticky;
+  padding: 15px;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #1b1f21;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+
+  p {
+    margin-bottom: 0px;
+  }
+}

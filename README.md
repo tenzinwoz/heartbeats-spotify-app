@@ -7,3 +7,5 @@
 ## Transparent Logo
 
 ## Need Premium account (Optional)
+
+## Debug git hub page deploy

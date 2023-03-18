@@ -1,0 +1,26 @@
+.header {
+  position: sticky;
+  padding: 15px;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $black-light;
+  .items {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+
+    .search-bar {
+      background-color: transparent;
+      border: 0px;
+      border-bottom: 1px solid #fafafa;
+    }
+    .account-avatar {
+      margin-left: 15px;
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+    }
+  }
+}
