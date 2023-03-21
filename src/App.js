@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import "./App.scss";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./container/login/Login";
 import {
   getItemFromLocalStoroage,
@@ -14,6 +9,7 @@ import {
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Dashboard from "./container/dashboard/Dashboard";
 import About from "./container/about/About";
+import "../node_modules/bootstrap/dist/js/bootstrap";
 
 function App() {
   const navigate = useNavigate();
@@ -31,8 +27,6 @@ function App() {
       const urlParams = new URLSearchParams(queryString);
       const accessToken = urlParams.get("#access_token");
       const tokenType = urlParams.get("token_type");
-
-      console.log(accessToken, tokenType);
 
       //Store in local storage
       if (accessToken && tokenType) {
@@ -53,7 +47,14 @@ function App() {
           </PrivateRoute>
         }
       >
-        <Route path="about" element={<About />} />
+        <Route
+          path="about"
+          element={
+            <PrivateRoute>
+              <About />
+            </PrivateRoute>
+          }
+        />
       </Route>
     </Routes>
   );

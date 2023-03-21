@@ -29,20 +29,19 @@ export default function Login() {
   };
 
   return (
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-8 landing-page">
-      <div>
+    <div className="row">
+      <div className="col-2"></div>
+      <div className="col-8 landing-page">
+        <div>
           <h1 className="text-white font-weight-bold mb-3">HeartBeats</h1>
           <button onClick={handleLogin} className="btn-green">
             Login to spotify
           </button>
+        </div>
       </div>
-      </div>
-      <div class="col-2">
-        <img src={Sound} alt="Sound" width="51px"/>
-        <div class="vl"></div>
+      <div className="col-2">
+        <img src={Sound} alt="Sound" width="51px" />
+        <div className="vl"></div>
       </div>
     </div>
   );
