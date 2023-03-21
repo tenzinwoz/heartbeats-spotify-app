@@ -5,5 +5,5 @@ export const setItemInLocalStoroage = (name, value) => {
 
 //Function to get item in local storage
 export const getItemFromLocalStoroage = (name) => {
-  return localStorage.getItem(name);
+  return JSON.parse(localStorage.getItem(name));
 };
