@@ -4,7 +4,8 @@ export default function Header({ profile }) {
   return (
     <div className={`header shadow`}>
       <div className="items">
-        <input type="email" className="search-bar" placeholder="Search" />
+        <p>Heartbeats</p>
+        <input type="search" className="search-bar" placeholder="Search" />
 
         <div className="rounded-circle account-avatar">
           {/* TODO: might break for non-premium menber, please check */}
