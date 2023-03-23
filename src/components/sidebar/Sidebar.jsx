@@ -21,7 +21,9 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="logo">
-        <img src={Logo} alt="Logo" />
+        <br></br>
+        <br></br>
+        {/* <img src={Logo} alt="Logo" /> */}
       </div>
       <hr className="divider" />
       <div className="menu">
