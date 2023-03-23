@@ -5,25 +5,61 @@
   width: 100%;
   height: 70px;
   background-color: $black-light;
+  color: #FBFAFA;
+
   .items {
     display: flex;
-    justify-content: end;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
 
+    img{
+      mix-blend-mode: lighten;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin: 0;
+      padding-left: 20px;
+    }
+
     .search-bar {
-      background-color: transparent;
-      border: 0px;
       border-bottom: 1px solid #fafafa;
+      margin-left: auto;
+    }
+
+    input{
+      border: 0px;
+      background-color: transparent;
+      color: #FBFAFA;
+    }
+
+    input:focus, textarea:focus, select:focus{
+      outline: none;
+    }
+
+    button{
+      background-color: #1B1F21;
+      border:none;
+      cursor: pointer;
+      outline: none;
     }
 
     .account-avatar {
-      margin-left: 15px;
+      margin-left: 45px;
       width: 50px;
       height: 50px;
       background-color: $primary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img {
         width: 100%;
+      }
+      p{
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
       }
     }
   }

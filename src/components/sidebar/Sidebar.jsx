@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../../assets/images/logo.png";
 
 export default function Sidebar() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -13,15 +12,27 @@ export default function Sidebar() {
 
   const menuList = [
     { path: "/dashboard", text: "Home", icon: "Icon" },
+    {
+      path: "/",
+      text: "Playlist",
+      icon: "Icon",
+      submenu: [
+        { path: "/playlist/happy", text: "Happy Feet", icon: "Icon" },
+        { path: "/playlist/sad", text: "Sad Vibes", icon: "Icon" },
+        { path: "/playlist/cozy", text: "Cozy Nights", icon: "Icon" },
+        { path: "/playlist/energy", text: "Energy Mode", icon: "Icon" },
+      ],
+    },
     { path: "/dashboard/about", text: "About Us", icon: "Icon" },
-    { path: "/", text: "Playlist", icon: "Icon" },
   ];
 
   console.log(activeMenu);
   return (
     <div className="sidebar">
       <div className="logo">
-        <img src={Logo} alt="Logo" />
+        <br />
+        <br />
+        {/* <img src={Logo} alt="Logo" /> */}
       </div>
       <hr className="divider" />
       <div className="menu">
@@ -31,7 +42,24 @@ export default function Sidebar() {
               key={index}
               className={`${activeMenu === menu.path ? "active" : ""}`}
             >
-              <Link to={`${menu.path}`}>{menu.text}</Link>
+              {menu.submenu ? (
+                <div className="dropdown">
+                  <Link to={`${menu.path}`}>{menu.text}</Link>
+                  <div className="dropdown-content">
+                    {menu.submenu.map((subMenu, subIndex) => (
+                      <Link
+                        key={subIndex}
+                        to={`${subMenu.path}`}
+                        style={{ marginLeft: "10px" }}
+                      >
+                        {subMenu.text}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link to={`${menu.path}`}>{menu.text}</Link>
+              )}
             </li>
           ))}
         </ul>
