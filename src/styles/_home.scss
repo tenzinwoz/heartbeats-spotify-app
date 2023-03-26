@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Quicksand:wght@300;500;600;700&display=swap');
+
+.slides{
+    color: #FBFAFA;
+    p{
+        font-family: 'Kaisei Opti', serif;
+        font-size: 102px;
+        width: 859px;
+        margin-left: 9%;
+    }
+
+    @media screen and (max-width: 1275px) {
+        p {
+          width: 85%;
+          font-size: 8vw;
+        }
+    }     
+}
+
+.slides-navigation {
+  bottom: 12%;
+  display: block;
+  left: 58%;
+  position: fixed;
+  transform: translateX(-50%);
+  visibility: visible;
+  width: 70%; /* default width */
+  z-index: 1011;
+}
+
+@media (max-width: 767px) {
+  .slides-navigation {
+    width: 90%; /* adjust width for smaller screens */
+  }
+}
+
+.slides-navigation ul {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  visibility: inherit;
+  width: 100%;
+}
+
+.slides-navigation ul::before {
+  background: #fff;
+  box-sizing: border-box;
+  content: "";
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: calc(100% - 40px);
+}
+
+.slides-navigation a {
+  display: block;
+  padding: 20px;
+  position: relative;
+  transform: translateZ(0);
+}
+
+.slides-navigation a span {
+  background: #fff;
+  border-radius: 100%;
+  display: block;
+  height: 6px;
+  left: 50%;
+  position: absolute;
+  width: 6px;
+  transition: all .3s ease-in-out;
+}
+
+.slides-navigation a:hover span {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.slides-navigation a:hover span::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slides-navigation a span::before {
+  background: #80726C99;
+  border-radius: 100%;
+  content: "";
+  height: 40px;
+  opacity: 0;
+  transform: translate(-50%,-50%);
+  transition: all .3s cubic-bezier(0,.5,.5,1);
+  visibility: hidden;
+  width: 40px;
+}
+
+.slides-navigation a span, .slides-navigation a span::before {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.slides-navigation-item {
+  font-size: 0;
+}
+
+.slides-navigation .tooltip {
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  z-index: 1;
+}
+
+.slides-navigation a:hover .tooltip {
+    visibility: visible;
+}
+
