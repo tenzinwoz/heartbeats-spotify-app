@@ -1,10 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Home from "../home/Home";
 
 export default function Content() {
+  const location = useLocation();
+
   return (
     <div className="content">
-      <Outlet />
+      {location.pathname === "/dashboard" ? <Home /> : <Outlet />}
     </div>
   );
 }
