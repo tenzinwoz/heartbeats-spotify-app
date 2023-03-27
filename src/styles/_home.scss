@@ -1,37 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Quicksand:wght@300;500;600;700&display=swap');
-
+      
 .slides{
-    color: #FBFAFA;
-    p{
-        font-family: 'Kaisei Opti', serif;
-        font-size: 102px;
-        width: 859px;
-        margin-left: 9%;
-    }
+  color: #FBFAFA;
+  p{
+      font-family: 'Kaisei Opti', serif;
+      font-size: 102px;
+      width: 859px;
+      margin-bottom: 2.2rem;
+  }
 
-    @media screen and (max-width: 1275px) {
-        p {
-          width: 85%;
-          font-size: 8vw;
-        }
-    }     
+  @media screen and (max-width: 1275px) {
+      p {
+        width: 85%;
+        font-size: 8vw;
+      }
+  }     
 }
 
 .slides-navigation {
-  bottom: 12%;
-  display: block;
-  left: 58%;
-  position: fixed;
-  transform: translateX(-50%);
-  visibility: visible;
-  width: 70%; /* default width */
-  z-index: 1011;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 80%; 
+  margin: 0 auto;
 }
+
 
 @media (max-width: 767px) {
   .slides-navigation {
-    width: 90%; /* adjust width for smaller screens */
+    width: 100%; 
   }
+}
+
+.scale-label {
+  position: absolute;
+  top: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.scale-label-left {
+  left: 0;
+}
+
+.scale-label-right {
+  right: 0;
 }
 
 .slides-navigation ul {
@@ -41,7 +54,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: static;
   top: 0;
   visibility: inherit;
   width: 100%;
@@ -127,6 +140,19 @@
 }
 
 .slides-navigation a:hover .tooltip {
-    visibility: visible;
+  visibility: visible;
 }
 
+.trending {
+  background-color: #FBFAFA;
+  height: 500px;
+  margin-top: 3.6rem;
+}
+
+.trending p {
+  font-size: 32px;
+  font-weight: 500;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
+}
