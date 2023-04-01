@@ -41,31 +41,6 @@ body {
   margin-top: 30px;
 }
 
-.about h1 {
-  background-color: #80726c99;
-  padding-left: 10px;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 150px;
-  color: $primary-color;
-  text-align: center;
-}
-
-.about p {
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #fbfafa;
-  font-size: 22px;
-  width: 1275px;
-}
-
-.about a {
-  text-decoration: underline !important;
-  text-underline-offset: 8px;
-  cursor: pointer;
-  color: #fbfafa;
-}
-
 @media screen and (max-width: 1275px) {
   .about p {
     width: 95%;

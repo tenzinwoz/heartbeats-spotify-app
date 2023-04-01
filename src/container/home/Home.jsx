@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div>
       <h1 className="white-text">
         If your mood was a number, what would it be?
       </h1>

@@ -11,6 +11,7 @@ import Dashboard from "./container/dashboard/Dashboard";
 import About from "./container/about/About";
 import "../node_modules/bootstrap/dist/js/bootstrap";
 import axios from "axios";
+import SingleTrack from "./container/singleTrack/SingleTrack";
 
 function App() {
   const navigate = useNavigate();
@@ -55,6 +56,14 @@ function App() {
           </PrivateRoute>
         }
       >
+        <Route
+          path="track/:id"
+          element={
+            <PrivateRoute>
+              <SingleTrack />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="about"
           element={

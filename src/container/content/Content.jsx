@@ -6,7 +6,7 @@ export default function Content() {
   const location = useLocation();
 
   return (
-    <div className="content">
+    <div className="content container">
       {location.pathname === "/dashboard" ? <Home /> : <Outlet />}
     </div>
   );
