@@ -1,15 +1,11 @@
 body {
-  // font-family: "Open Sans", sans-serif;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
 }
 
-// .h1-head {
-//   font-size: large;
-// }
-
-.col-2{
+.col-2 {
   background-color: $black-light;
-  position: relative; 
+  position: relative;
 }
 
 .col-2 img {
@@ -26,14 +22,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid #EFF1EB;
+  border: 1px solid #eff1eb;
 }
 
-.text-white{
+.text-white {
   font-size: 48px;
   font-weight: 400;
   line-height: 80px;
-  color: #EFF1EB;
+  color: #eff1eb;
 }
 
 .btn-green {
@@ -41,33 +37,8 @@ body {
   border: none;
   background-color: $primary-color;
   padding: 18px 37px;
-  color: #FBFAFA;
+  color: #fbfafa;
   margin-top: 30px;
-}
-
-.about h1{
-  background-color: #80726C99;
-  padding-left: 10px;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 150px;
-  color: $primary-color;
-  text-align: center;
-}
-
-.about p {
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #FBFAFA;
-  font-size: 22px;
-  width: 1275px; 
-}
-
-.about a {
-  text-decoration: underline !important;
-  text-underline-offset: 8px;
-  cursor: pointer;
-  color: #FBFAFA;
 }
 
 @media screen and (max-width: 1275px) {
@@ -76,4 +47,3 @@ body {
     max-width: none;
   }
 }
-

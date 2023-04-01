@@ -10,14 +10,23 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Dashboard from "./container/dashboard/Dashboard";
 import About from "./container/about/About";
 import "../node_modules/bootstrap/dist/js/bootstrap";
+import axios from "axios";
+import SingleTrack from "./container/singleTrack/SingleTrack";
 
 function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = getItemFromLocalStoroage("token");
+    const tokenType = getItemFromLocalStoroage("tokenType");
+
     if (token) {
+      //Set default header to all api
+      axios.defaults.headers.common["authorization"] = `${tokenType} ${token}`;
       navigate("/dashboard");
+    } else {
+      //remove header if no token found
+      delete axios.defaults.headers.common["authorization"];
     }
   }, []);
 
@@ -47,6 +56,14 @@ function App() {
           </PrivateRoute>
         }
       >
+        <Route
+          path="track/:id"
+          element={
+            <PrivateRoute>
+              <SingleTrack />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="about"
           element={

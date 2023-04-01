@@ -26,7 +26,6 @@ export default function Sidebar() {
     { path: "/dashboard/about", text: "About Us", icon: "Icon" },
   ];
 
-  console.log(activeMenu);
   return (
     <div className="sidebar">
       <div className="logo">

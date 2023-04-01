@@ -15,11 +15,7 @@ export default function Dashboard() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getProfile = async () => {
     try {
-      const res = await axios.get("https://api.spotify.com/v1/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await axios.get("https://api.spotify.com/v1/me");
       setProfileData(res?.data);
     } catch (error) {
       console.log(error);
@@ -27,13 +23,10 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    console.log(token);
     if (!!token) {
       getProfile();
     }
   }, [token]);
-
-  console.log({ profileData });
 
   return (
     <div className="dashboard">

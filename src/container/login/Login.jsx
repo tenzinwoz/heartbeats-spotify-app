@@ -15,6 +15,11 @@ export default function Login() {
     "user-top-read",
     "playlist-modify-public",
     "playlist-modify-private",
+    "streaming",
+    "user-read-email",
+    "user-read-private",
+    "user-read-playback-state",
+    "user-modify-playback-state",
   ];
 
   //Url cleaning
