@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { removeItemFromLocalStoroage } from "../../helper/common";
 import LogoutModal from "../logoutModal/LogoutModal";
+import logo from "../../assets/images/logo.png";
 
 export default function Sidebar() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -29,17 +30,10 @@ export default function Sidebar() {
     { path: "/dashboard/about", text: "About Us", icon: "Icon" },
   ];
 
-  const handleLogout = () => {
-    removeItemFromLocalStoroage("token");
-    removeItemFromLocalStoroage("tokenType");
-  };
-
   return (
     <div className="sidebar">
       <div className="logo">
-        <br />
-        <br />
-        {/* <img src={Logo} alt="Logo" /> */}
+        <img src={logo} alt="Sound" />
       </div>
       <hr className="divider" />
       <div className="menu">
