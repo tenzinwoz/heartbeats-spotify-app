@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { removeItemFromLocalStoroage } from "../../helper/common";
+import LogoutModal from "../logoutModal/LogoutModal";
 
 export default function Sidebar() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
+  const [logout, setLogout] = useState(false);
 
   let location = useLocation();
 
@@ -25,6 +28,11 @@ export default function Sidebar() {
     },
     { path: "/dashboard/about", text: "About Us", icon: "Icon" },
   ];
+
+  const handleLogout = () => {
+    removeItemFromLocalStoroage("token");
+    removeItemFromLocalStoroage("tokenType");
+  };
 
   return (
     <div className="sidebar">
@@ -61,8 +69,10 @@ export default function Sidebar() {
               )}
             </li>
           ))}
+          <Link onClick={() => setLogout(true)}>Logout</Link>
         </ul>
       </div>
+      <LogoutModal show={logout} onHide={() => setLogout(false)} />
     </div>
   );
 }
