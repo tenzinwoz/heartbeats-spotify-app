@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import Smiley from "./Smiley";
 import axios from "axios";
 import Track from "../../components/trackCard/Track";
+import MoodBoard from "../../components/moodBoard/MoodBoard";
+import { getMood } from "../../helper/common";
 
 export default function Home() {
-  const [mood, setMood] = useState(0);
+  const [mood, setMood] = useState(10);
   const [topTracks, setTopTracks] = useState([]);
 
   //Gets user top tracks
@@ -21,30 +23,32 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="white-text">
-        If your mood was a number, what would it be?
-      </h1>
-      <p>0 Being Sad and 10 being super happy</p>
-      <Smiley mood={mood} />
-      <div>
-        <input
-          type="range"
-          id="mood"
-          name="mood"
-          min="0"
-          max="10"
-          value={mood}
-          onChange={(e) => setMood(e?.target?.value)}
-          style={{ width: "100%" }}
-        />
-        <p className="text-center">{mood}</p>
+      <div className="mood-box mb-4">
+        <h1>If your mood was a song, what would it be ?</h1>
+        <p className="mb-3">Slide to choose your current mood.</p>
+        <Smiley mood={mood} />
+        <div>
+          <input
+            type="range"
+            id="mood"
+            name="mood"
+            min="0"
+            max="10"
+            value={mood}
+            onChange={(e) => setMood(e?.target?.value)}
+            style={{ width: "100%", accentColor: "#71948d" }}
+          />
+        </div>
       </div>
+
       <div className="mb-5">
-        <h2>Song Recommendations</h2>
-        <div></div>
+        <h2 className="mb-4">
+          <span className="bold-primary-text">{getMood(mood)}</span> songs
+        </h2>
+        <MoodBoard topTracks={topTracks} mood={mood} />
       </div>
       <div>
-        <h2>Top Tracks</h2>
+        <h2 className="mb-4">Top Tracks</h2>
         <div className="row">
           {topTracks?.length ? (
             <>
@@ -53,7 +57,10 @@ export default function Home() {
               ))}
             </>
           ) : (
-            "No Tracks found for the user"
+            <p>
+              <i class="bi bi-slash-circle text-white"></i> No Tracks found for
+              the user!
+            </p>
           )}
         </div>
       </div>

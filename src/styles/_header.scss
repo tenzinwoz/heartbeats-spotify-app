@@ -5,7 +5,7 @@
   width: 100%;
   height: 70px;
   background-color: $black-light;
-  color: #FBFAFA;
+  color: #fbfafa;
 
   .items {
     display: flex;
@@ -13,7 +13,7 @@
     justify-content: space-between;
     height: 100%;
 
-    img{
+    img {
       mix-blend-mode: lighten;
     }
 
@@ -28,19 +28,21 @@
       margin-left: auto;
     }
 
-    input{
+    input {
       border: 0px;
       background-color: transparent;
-      color: #FBFAFA;
+      color: #fbfafa;
     }
 
-    input:focus, textarea:focus, select:focus{
+    input:focus,
+    textarea:focus,
+    select:focus {
       outline: none;
     }
 
-    button{
-      background-color: #1B1F21;
-      border:none;
+    button {
+      background-color: #1b1f21;
+      border: none;
       cursor: pointer;
       outline: none;
     }
@@ -56,7 +58,7 @@
       img {
         width: 100%;
       }
-      p{
+      p {
         margin: 0;
         font-weight: bold;
         font-size: 18px;

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { removeItemFromLocalStoroage } from "../../helper/common";
+import LogoutModal from "../logoutModal/LogoutModal";
+import logo from "../../assets/images/logo.png";
 
 export default function Sidebar() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
+  const [logout, setLogout] = useState(false);
 
   let location = useLocation();
 
@@ -29,9 +33,7 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="logo">
-        <br />
-        <br />
-        {/* <img src={Logo} alt="Logo" /> */}
+        <img src={logo} alt="Sound" />
       </div>
       <hr className="divider" />
       <div className="menu">
@@ -61,8 +63,10 @@ export default function Sidebar() {
               )}
             </li>
           ))}
+          <Link onClick={() => setLogout(true)}>Logout</Link>
         </ul>
       </div>
+      <LogoutModal show={logout} onHide={() => setLogout(false)} />
     </div>
   );
 }

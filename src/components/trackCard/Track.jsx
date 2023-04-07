@@ -10,17 +10,17 @@ export default function Track({ track }) {
     navigate(`track/${trackSelected?.id}`);
   };
   return (
-    <div className="col-lg-4 col-md-4">
+    <div className="col-lg-4 col-md-4 mb-5">
       <div
-        style={{ maxWidth: "200px" }}
+        className="track-card"
         type="button"
         onClick={() => {
           handleTrackClick(track);
         }}
       >
         <img src={album?.images[0]?.url} alt="Album cover" width={"100%"} />
-        <p>{artists[0]?.name}</p>
-        <p>{track?.name}</p>
+        <p className="mb-2">{track?.name}</p>
+        <h6>{artists[0]?.name}</h6>
       </div>
     </div>
   );
