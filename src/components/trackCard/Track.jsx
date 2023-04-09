@@ -7,7 +7,7 @@ export default function Track({ track }) {
 
   //Routes to single track page
   const handleTrackClick = (trackSelected) => {
-    navigate(`track/${trackSelected?.id}`);
+    navigate(`/dashboard/track/${trackSelected?.id}`);
   };
   return (
     <div className="col-lg-4 col-md-4 mb-5">
