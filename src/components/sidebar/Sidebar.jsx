@@ -1,12 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { removeItemFromLocalStoroage } from "../../helper/common";
 import LogoutModal from "../logoutModal/LogoutModal";
 import logo from "../../assets/images/logo.png";
+import axios from "axios";
+import Accordion from "react-bootstrap/Accordion";
+import { useAccordionButton } from "react-bootstrap/AccordionButton";
+import Card from "react-bootstrap/Card";
+import DropDopwnImg from "../../assets/images/dropdown.png";
+
+function CustomToggle({ children, eventKey }) {
+  const decoratedOnClick = useAccordionButton(eventKey);
+
+  return (
+    <div
+      className="d-flex justify-content-between"
+      onClick={decoratedOnClick}
+      type="button"
+      style={{ padding: "10px" }}
+    >
+      <p>{children}</p>
+      <img src={DropDopwnImg} alt="dropdown" />
+    </div>
+  );
+}
 
 export default function Sidebar() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [logout, setLogout] = useState(false);
+  const [menuList, setMenuList] = useState([]);
 
   let location = useLocation();
 
@@ -14,21 +35,27 @@ export default function Sidebar() {
     setActiveMenu(location.pathname);
   }, [location]);
 
-  const menuList = [
-    { path: "/dashboard", text: "Home", icon: "Icon" },
-    {
-      path: "/",
-      text: "Playlist",
-      icon: "Icon",
-      submenu: [
-        { path: "/playlist/happy", text: "Happy Feet", icon: "Icon" },
-        { path: "/playlist/sad", text: "Sad Vibes", icon: "Icon" },
-        { path: "/playlist/cozy", text: "Cozy Nights", icon: "Icon" },
-        { path: "/playlist/energy", text: "Energy Mode", icon: "Icon" },
-      ],
-    },
-    { path: "/dashboard/about", text: "About Us", icon: "Icon" },
-  ];
+  useEffect(() => {
+    async function handleMenuStructure() {
+      const res = await axios.get(`https://api.spotify.com/v1/me/playlists`);
+      const subMenu = res?.data?.items.map((item) => ({
+        path: `playlist/${item?.id}`,
+        text: item?.name,
+      }));
+      const menu = [
+        { path: "/dashboard", text: "Home", icon: "Icon" },
+        {
+          path: "/",
+          text: "Playlist",
+          icon: "Icon",
+          submenu: subMenu,
+        },
+        { path: "/dashboard/about", text: "About Us", icon: "Icon" },
+      ];
+      setMenuList(menu);
+    }
+    handleMenuStructure();
+  }, []);
 
   return (
     <div className="sidebar">
@@ -44,19 +71,23 @@ export default function Sidebar() {
               className={`${activeMenu === menu.path ? "active" : ""}`}
             >
               {menu.submenu ? (
-                <div className="dropdown">
-                  <Link to={`${menu.path}`}>{menu.text}</Link>
-                  <div className="dropdown-content">
-                    {menu.submenu.map((subMenu, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        to={`${subMenu.path}`}
-                        style={{ marginLeft: "10px" }}
-                      >
-                        {subMenu.text}
-                      </Link>
-                    ))}
-                  </div>
+                <div className="dropdown ">
+                  <Accordion>
+                    <CustomToggle eventKey="0">{menu.text}</CustomToggle>
+                    <Accordion.Collapse eventKey="0">
+                      <Card.Body>
+                        {menu.submenu.map((subMenu, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            to={`${subMenu.path}`}
+                            style={{ marginLeft: "10px" }}
+                          >
+                            {subMenu.text}
+                          </Link>
+                        ))}
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Accordion>
                 </div>
               ) : (
                 <Link to={`${menu.path}`}>{menu.text}</Link>

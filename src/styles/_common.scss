@@ -59,3 +59,14 @@ p {
   color: $primary-color;
   font-weight: bold;
 }
+
+.create-playlist-input {
+  border: 0px;
+  background-color: transparent;
+  color: #fbfafa;
+  border-bottom: 1px solid #fafafa;
+}
+
+.create-playlist-input:focus {
+  outline: none;
+}
