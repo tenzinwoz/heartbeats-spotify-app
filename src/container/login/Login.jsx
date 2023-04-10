@@ -4,7 +4,7 @@ import Sound from "../../assets/images/sound.gif";
 export default function Login() {
   const CLIENT_ID = "0488d6cf182842f39b700107193dc752";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-  const REDIRECT_URI = "http://localhost:3000";
+  const REDIRECT_URI = "https://tenzinwoz.github.io/heartbeats-spotify-app/";
   const RESPONSE_TYPE = "token";
 
   //Features that we are gonna use
