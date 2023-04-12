@@ -20,7 +20,6 @@ export default function MoodBoard({ topTracks, mood }) {
       const userMood = getMood(mood);
       const filteredIds = [];
       const selectedTracks = [];
-      console.log({ userMood });
 
       //Core functionality
       tracksFeature?.forEach((track) => {
