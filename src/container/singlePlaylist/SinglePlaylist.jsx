@@ -20,7 +20,7 @@ export default function SinglePlaylist() {
 
   return (
     <div>
-      <h1 className="mb-4">Playlist :</h1>
+      <h1 className="mb-4">Playlist:</h1>
 
       {!!tracks?.length ? (
         <div className="row">
