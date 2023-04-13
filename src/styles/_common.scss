@@ -1,39 +1,42 @@
 body {
-  // font-family: "Open Sans", sans-serif;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
 }
 
-// .h1-head {
-//   font-size: large;
+p {
+  margin: 0;
+}
+
+//This will break
+//Need to find another way to style this
+// Make the styling aboslute to this part. Affects bootstrap common classes
+// .col-2 {
+//   background-color: $black-light;
+//   position: relative;
 // }
 
-.col-2{
-  background-color: $black-light;
-  position: relative; 
-}
+// .col-2 img {
+//   transform: rotate(90deg);
+//   margin: auto;
+//   margin-top: 90px;
+//   mix-blend-mode: lighten;
+//   display: block;
+// }
 
-.col-2 img {
-  transform: rotate(90deg);
-  margin: auto;
-  margin-top: 90px;
-  mix-blend-mode: lighten;
-  display: block;
-}
+// .vl {
+//   position: absolute;
+//   height: 100vh;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   border: 1px solid #eff1eb;
+// }
 
-.vl {
-  position: absolute;
-  height: 100vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #EFF1EB;
-}
-
-.text-white{
+.text-white {
   font-size: 48px;
   font-weight: 400;
   line-height: 80px;
-  color: #EFF1EB;
+  color: #eff1eb;
 }
 
 .btn-green {
@@ -41,39 +44,29 @@ body {
   border: none;
   background-color: $primary-color;
   padding: 18px 37px;
-  color: #FBFAFA;
-  margin-top: 30px;
+  color: #fbfafa;
 }
-
-.about h1{
-  background-color: #80726C99;
-  padding-left: 10px;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 150px;
+.btn-secondary {
+  border-radius: 30px;
+  border: none;
+  padding: 18px 37px;
+  color: #000;
+}
+.cm-modal .modal-content {
+  background-color: #424242;
+}
+.bold-primary-text {
   color: $primary-color;
-  text-align: center;
+  font-weight: bold;
 }
 
-.about p {
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #FBFAFA;
-  font-size: 22px;
-  width: 1275px; 
+.create-playlist-input {
+  border: 0px;
+  background-color: transparent;
+  color: #fbfafa;
+  border-bottom: 1px solid #fafafa;
 }
 
-.about a {
-  text-decoration: underline !important;
-  text-underline-offset: 8px;
-  cursor: pointer;
-  color: #FBFAFA;
+.create-playlist-input:focus {
+  outline: none;
 }
-
-@media screen and (max-width: 1275px) {
-  .about p {
-    width: 95%;
-    max-width: none;
-  }
-}
-
