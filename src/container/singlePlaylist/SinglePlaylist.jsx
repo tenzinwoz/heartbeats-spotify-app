@@ -6,6 +6,7 @@ import Track from "../../components/trackCard/Track";
 
 export default function SinglePlaylist() {
   const [tracks, setTracks] = useState([]);
+  const [currentPlayList, setCurrentPLayList] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,12 +16,18 @@ export default function SinglePlaylist() {
       );
       setTracks(res?.data?.items);
     }
+    async function getPlayList() {
+      const res = await axios.get(`https://api.spotify.com/v1/me/playlists`);
+      const playList = res?.data?.items.find((item) => item.id == id);
+      setCurrentPLayList(playList);
+    }
+
+    getPlayList();
     getTracks();
   }, [id]);
-
   return (
     <div>
-      <h1 className="mb-4">Playlist :</h1>
+      <h1 className="mb-4">Playlist: {currentPlayList?.name}</h1>
 
       {!!tracks?.length ? (
         <div className="row">
